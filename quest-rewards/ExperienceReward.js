@@ -39,7 +39,7 @@ module.exports = class ExperienceReward extends QuestReward {
     let amount = config.amount;
     if (config.leveledTo) {
       const level = config.leveledTo === 'PLAYER' ? player.level : quest.config.level;
-      amount = LevelUtil.mobExp(level) * amount;
+      amount = LevelUtil.mobExp(this.level, this.level) * amount;
     }
 
     return amount;
